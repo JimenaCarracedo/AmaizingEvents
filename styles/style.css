@@ -67,21 +67,25 @@ h1{
 }
 #eventos{
     display:flex;
-    width: 90%;
+    width: 80%;
     justify-content:center;
     margin-bottom: 20%;
     margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
 }
 
 #ev1, #ev2, #ev3, #ev4{
     display:inline-block;
     text-align: center; 
+    border-style: solid;
+    border-color: rgb(14, 112, 112);
+    border-width: 1px;
     
 }
 #eventos>div>img{
-    width:70%;
+    width:80%;
     height:100px;
     border-width: 1px;
     border-style: solid;
