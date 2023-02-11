@@ -67,19 +67,17 @@ h1{
 }
 #eventos{
     display:flex;
-    width:90%;
+    width: 90%;
     justify-content:center;
-    margin-right: 5%;
-    margin-left: 5%;
     margin-bottom: 20%;
     margin-top: 10%;
-    
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #ev1, #ev2, #ev3, #ev4{
     display:inline-block;
     text-align: center; 
-    margin-right: 2%;   
     
 }
 #eventos>div>img{
@@ -92,9 +90,12 @@ h1{
 h2{
     color: rgb(14, 112, 112);
 }
+p{
+    text-align: left;
+}
 p>a{
-    text-align: center;
-    margin-left: 15%;
+    text-align: right;
+    margin-left: 5%;
     color:rgb(240, 43, 191);
 }
 #ev5{
@@ -158,4 +159,5 @@ form{
 form>input{
     color: rgb(240, 43, 191);
     background-color:rgb(159, 241, 241);
+    border-radius: 10%;
 }
