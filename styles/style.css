@@ -81,11 +81,12 @@ h1{
     
 }
 #eventos>div>img{
-    width:100%;
+    width:80%;
     height:100px;
     border-width: 1px;
     border-style: solid;
     border-color: black;
+    
 }
 h2{
     color: rgb(14, 112, 112);
