@@ -146,10 +146,6 @@ table{
     border-style: solid;
     
 }
-td{
-    border-width: 1px;
-    border-bottom-style: solid;
-}
 form{
     text-align: center;
     margin-top: 20%;
