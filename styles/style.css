@@ -1,10 +1,10 @@
 body {
     
-    background-image: url("./fondo.png");
+    /*background-image: url("./fondo.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center;*/
     background-color: rgb(247, 214, 71);
-    opacity: 1.5;
+    
 }
 
 header {
