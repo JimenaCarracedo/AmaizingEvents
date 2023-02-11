@@ -79,9 +79,7 @@ h1{
 #ev1, #ev2, #ev3, #ev4{
     display:inline-block;
     text-align: center; 
-    border-style: solid;
-    border-color: rgb(14, 112, 112);
-    border-width: 1px;
+    
     
 }
 #eventos>div>img{
