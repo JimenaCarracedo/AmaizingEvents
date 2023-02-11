@@ -79,7 +79,9 @@ h1{
 #ev1, #ev2, #ev3, #ev4{
     display:inline-block;
     text-align: center; 
-    
+    box-shadow: 1px 4px 1px rgb(245, 170, 216);
+    margin: 4px;
+    padding: 1px;
     
 }
 #eventos>div>img{
@@ -103,6 +105,10 @@ p>a{
 #ev5{
     display: flex;
     width:100%;
+    box-shadow: 1px 4px 1px rgb(245, 170, 216);
+    margin: 4px;
+    padding: 1px;
+    
 }
 #ev5>img{
     width: 50%;
