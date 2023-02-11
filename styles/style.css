@@ -112,11 +112,11 @@ h2 {
 }
 
 p {
-    text-align: left;
+    text-align: center;
 }
 
 p>a {
-    text-align: right;
+    text-align: center;
     margin-left: 5%;
     color: rgb(240, 43, 191);
 }
