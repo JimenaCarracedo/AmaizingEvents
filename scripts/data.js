@@ -212,6 +212,7 @@ var data = {
         description.push(clave.description);
         prce.push(clave.price);
         img.push(clave.image);
+        
       }
       
       for (i=0; i<4; i++){
@@ -243,6 +244,7 @@ var data = {
         let a=document.createElement("a");
         a.innerHTML="Ver Mas";
         a.setAttribute("href", "./details.html");
+        
         
         nav.appendChild(a);
         eventos.appendChild(div);
