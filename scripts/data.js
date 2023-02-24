@@ -244,8 +244,6 @@ var data = {
         let a=document.createElement("a");
         a.innerHTML="Ver Mas";
         a.setAttribute("href", "./details.html");
-        
-        
         nav.appendChild(a);
         eventos.appendChild(div);
         }
