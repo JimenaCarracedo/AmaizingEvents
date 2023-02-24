@@ -153,6 +153,7 @@ p {
 
 footer {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 100%;
     height: 20px;
@@ -231,4 +232,42 @@ form>input {
         width:80vw;
     }
     
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 20px;
+        background-color: rgb(240, 43, 191);
+        margin-top: 5%;
+        margin-bottom: 0%;
+    }
+    
+    hr {
+        height: 3px;
+        color: black;
+        background-color: black;
+    }
+    
+    footer>div>a>img {
+        width: 15px;
+        align-items: start;
+        margin-left: 2%;
+        margin-top: 2px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: black;
+        border-radius: 50%;
+        margin-right: -10%;
+    }
+    
+    footer>div>img {
+        
+        align-items: end;
+    }
+    
+    footer>div>p {
+        align-items: end;
+        margin-right: -20%;
+    }
 }  
