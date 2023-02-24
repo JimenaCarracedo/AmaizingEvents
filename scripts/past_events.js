@@ -181,7 +181,7 @@ var data = {
   console.log("fecha de eventos: ");
   for (clave of data.events){
       console.log(clave.date);
-      if(clave.date<data.currentDate){
+      if(clave.date>data.currentDate){
         upcomingevents.push(Object.entries(clave));
       
         
