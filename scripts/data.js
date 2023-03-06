@@ -206,13 +206,13 @@ for (clave of data.events){
     let description=[];
     let prce=[];
     let img=[];
-
+    
     for (clave of data.events){
       titles.push(clave.name);
       description.push(clave.description);
       prce.push(clave.price);
       img.push(clave.image);
-      
+      evento=clave;
     }
     
     /*for (i=0; i<4; i++){
@@ -224,30 +224,36 @@ for (clave of data.events){
     }*/
     let Eventos=[];
     Eventos=data.events;
-    Eventos.forEach(evento=>{
-      i=evento._id-1;
+    function imprimirCards(evento){
+      
+        i=evento._id-1;
       let div=document.createElement("div");
       
       let divisor=document.createElement("div");
       divisor.className=("card");
       eventos.appendChild(divisor);
       imagenes[i]=document.createElement("img");
-      imagenes[i].setAttribute("src", img[i]);
+      imagenes[i].setAttribute("src", evento.image);
       divisor.appendChild(imagenes[i]);
       titulos[i]=document.createElement("h2");
-      titulos[i].innerHTML=titles[i];
+      titulos[i].innerHTML=evento.name;
       divisor.appendChild(titulos[i]);
       desc[i]=document.createElement("p");
-      desc[i].innerHTML=description[i];
+      desc[i].innerHTML=evento.description;
       divisor.appendChild(desc[i]);
       price[i]=document.createElement("p");
-      price[i].innerHTML=("Price: $"+prce[i]);
+      price[i].innerHTML=("Price: $"+evento.price);
       divisor.appendChild(price[i]);
       let nav=document.createElement("nav");
       divisor.appendChild(nav);
       nav.innerHTML= `<a href="./details.html?_id=${evento._id}">Ver Mas</a>`
       
-      });
+    };
+    
+    
+    Eventos.forEach(evento=>{
+      imprimirCards(evento);
+    });
       Eventos.forEach(evento=>{
       console.log(evento._id);
       });
@@ -291,30 +297,9 @@ for (clave of data.events){
             categoria1=Events.filter(evento=>evento.category.toUpperCase()==catI.toUpperCase());
             console.log(categoria1);
             let div=document.createElement("div");
-      categoria1.forEach(evento=>{
-      let divisor=document.createElement("div");
-      divisor.className=("card");
-      eventos.appendChild(divisor);
-      imagenes[i]=document.createElement("img");
-      imagenes[i].setAttribute("src", evento.image);
-      divisor.appendChild(imagenes[i]);
-      titulos[i]=document.createElement("h2");
-      titulos[i].innerHTML=evento.name;
-      divisor.appendChild(titulos[i]);
-      desc[i]=document.createElement("p");
-      desc[i].innerHTML=evento.description;
-      divisor.appendChild(desc[i]);
-      price[i]=document.createElement("p");
-      price[i].innerHTML=("Price: $"+evento.price);
-      divisor.appendChild(price[i]);
-      let nav=document.createElement("nav");
-      divisor.appendChild(nav);
-      let a=document.createElement("a");
-      a.innerHTML="Ver Mas";
-      a.setAttribute("href", "./details.html");
-      nav.appendChild(a);
-      eventos.appendChild(div);
-            });
+            categoria1.forEach(evento=>{
+      imprimirCards(evento);
+    });
           };
           function filtrar2(){
             borrarCards()
@@ -325,28 +310,7 @@ for (clave of data.events){
                 console.log(categoria2);
                 let div=document.createElement("div");
           categoria2.forEach(evento=>{
-          let divisor=document.createElement("div");
-          divisor.className=("card");
-          eventos.appendChild(divisor);
-          imagenes[i]=document.createElement("img");
-          imagenes[i].setAttribute("src", evento.image);
-          divisor.appendChild(imagenes[i]);
-          titulos[i]=document.createElement("h2");
-          titulos[i].innerHTML=evento.name;
-          divisor.appendChild(titulos[i]);
-          desc[i]=document.createElement("p");
-          desc[i].innerHTML=evento.description;
-          divisor.appendChild(desc[i]);
-          price[i]=document.createElement("p");
-          price[i].innerHTML=("Price: $"+evento.price);
-          divisor.appendChild(price[i]);
-          let nav=document.createElement("nav");
-          divisor.appendChild(nav);
-          let a=document.createElement("a");
-          a.innerHTML="Ver Mas";
-          a.setAttribute("href", "./details.html");
-          nav.appendChild(a);
-          eventos.appendChild(div);
+          imprimirCards(evento)
                 });
               };      
               function filtrar3(){
@@ -358,28 +322,7 @@ for (clave of data.events){
                     console.log(categoria3);
                     let div=document.createElement("div");
               categoria3.forEach(evento=>{
-              let divisor=document.createElement("div");
-              divisor.className=("card");
-              eventos.appendChild(divisor);
-              imagenes[i]=document.createElement("img");
-              imagenes[i].setAttribute("src", evento.image);
-              divisor.appendChild(imagenes[i]);
-              titulos[i]=document.createElement("h2");
-              titulos[i].innerHTML=evento.name;
-              divisor.appendChild(titulos[i]);
-              desc[i]=document.createElement("p");
-              desc[i].innerHTML=evento.description;
-              divisor.appendChild(desc[i]);
-              price[i]=document.createElement("p");
-              price[i].innerHTML=("Price: $"+evento.price);
-              divisor.appendChild(price[i]);
-              let nav=document.createElement("nav");
-              divisor.appendChild(nav);
-              let a=document.createElement("a");
-              a.innerHTML="Ver Mas";
-              a.setAttribute("href", "./details.html");
-              nav.appendChild(a);
-              eventos.appendChild(div);
+              imprimirCards(evento);
                     });
                   };    
                   function filtrar4(){
@@ -391,29 +334,8 @@ for (clave of data.events){
                         console.log(categoria4);
                         let div=document.createElement("div");
                   categoria4.forEach(evento=>{
-                  let divisor=document.createElement("div");
-                  divisor.className=("card");
-                  eventos.appendChild(divisor);
-                  imagenes[i]=document.createElement("img");
-                  imagenes[i].setAttribute("src", evento.image);
-                  divisor.appendChild(imagenes[i]);
-                  titulos[i]=document.createElement("h2");
-                  titulos[i].innerHTML=evento.name;
-                  divisor.appendChild(titulos[i]);
-                  desc[i]=document.createElement("p");
-                  desc[i].innerHTML=evento.description;
-                  divisor.appendChild(desc[i]);
-                  price[i]=document.createElement("p");
-                  price[i].innerHTML=("Price: $"+evento.price);
-                  divisor.appendChild(price[i]);
-                  let nav=document.createElement("nav");
-                  divisor.appendChild(nav);
-                  let a=document.createElement("a");
-                  a.innerHTML="Ver Mas";
-                  a.setAttribute("href", "./details.html");
-                  nav.appendChild(a);
-                  eventos.appendChild(div);
-                        });
+                  imprimirCards(evento)      
+                });
                       };
                       function filtrar5(){
                         borrarCards()
@@ -424,29 +346,8 @@ for (clave of data.events){
                             console.log(categoria5);
                             let div=document.createElement("div");
                       categoria5.forEach(evento=>{
-                      let divisor=document.createElement("div");
-                      divisor.className=("card");
-                      eventos.appendChild(divisor);
-                      imagenes[i]=document.createElement("img");
-                      imagenes[i].setAttribute("src", evento.image);
-                      divisor.appendChild(imagenes[i]);
-                      titulos[i]=document.createElement("h2");
-                      titulos[i].innerHTML=evento.name;
-                      divisor.appendChild(titulos[i]);
-                      desc[i]=document.createElement("p");
-                      desc[i].innerHTML=evento.description;
-                      divisor.appendChild(desc[i]);
-                      price[i]=document.createElement("p");
-                      price[i].innerHTML=("Price: $"+evento.price);
-                      divisor.appendChild(price[i]);
-                      let nav=document.createElement("nav");
-                      divisor.appendChild(nav);
-                      let a=document.createElement("a");
-                      a.innerHTML="Ver Mas";
-                      a.setAttribute("href", "./details.html");
-                      nav.appendChild(a);
-                      eventos.appendChild(div);
-                            });
+                      imprimirCards(evento);
+                          });
                           };    
                           function filtrar6(){
                             borrarCards()
@@ -457,29 +358,8 @@ for (clave of data.events){
                                 console.log(categoria6);
                                 let div=document.createElement("div");
                           categoria6.forEach(evento=>{
-                          let divisor=document.createElement("div");
-                          divisor.className=("card");
-                          eventos.appendChild(divisor);
-                          imagenes[i]=document.createElement("img");
-                          imagenes[i].setAttribute("src", evento.image);
-                          divisor.appendChild(imagenes[i]);
-                          titulos[i]=document.createElement("h2");
-                          titulos[i].innerHTML=evento.name;
-                          divisor.appendChild(titulos[i]);
-                          desc[i]=document.createElement("p");
-                          desc[i].innerHTML=evento.description;
-                          divisor.appendChild(desc[i]);
-                          price[i]=document.createElement("p");
-                          price[i].innerHTML=("Price: $"+evento.price);
-                          divisor.appendChild(price[i]);
-                          let nav=document.createElement("nav");
-                          divisor.appendChild(nav);
-                          let a=document.createElement("a");
-                          a.innerHTML="Ver Mas";
-                          a.setAttribute("href", "./details.html");
-                          nav.appendChild(a);
-                          eventos.appendChild(div);
-                                });
+                          imprimirCards(evento)
+                              });
                               };    
                               function filtrar7(){
                                 borrarCards()
@@ -490,31 +370,21 @@ for (clave of data.events){
                                     console.log(categoria7);
                                     let div=document.createElement("div");
                               categoria7.forEach(evento=>{
-                              let divisor=document.createElement("div");
-                              divisor.className=("card");
-                              eventos.appendChild(divisor);
-                              imagenes[i]=document.createElement("img");
-                              imagenes[i].setAttribute("src", evento.image);
-                              divisor.appendChild(imagenes[i]);
-                              titulos[i]=document.createElement("h2");
-                              titulos[i].innerHTML=evento.name;
-                              divisor.appendChild(titulos[i]);
-                              desc[i]=document.createElement("p");
-                              desc[i].innerHTML=evento.description;
-                              divisor.appendChild(desc[i]);
-                              price[i]=document.createElement("p");
-                              price[i].innerHTML=("Price: $"+evento.price);
-                              divisor.appendChild(price[i]);
-                              let nav=document.createElement("nav");
-                              divisor.appendChild(nav);
-                              let a=document.createElement("a");
-                              a.innerHTML="Ver Mas";
-                              a.setAttribute("href", "./details.html");
-                              nav.appendChild(a);
-                              eventos.appendChild(div);
+                              imprimirCards(evento);
                                     });
                                   };  
-      
+                              function filtrar7(){
+                                borrarCards()
+                                let catVII =document.getElementById("categories7").textContent;
+                                
+                                    let categoria7=[];
+                                    categoria7=Events.filter(evento=>evento.category.toUpperCase()==catVII.toUpperCase());
+                                    console.log(categoria7);
+                                    let div=document.createElement("div");
+                                    categoria7.forEach(evento=>{
+                              imprimirCards(evento);
+                                    });
+                                  };
       let cat1 =document.getElementById("cat1").addEventListener('click', filtrar1);
       let cat2 =document.getElementById("cat2").addEventListener('click', filtrar2);
       let cat3 =document.getElementById("cat3").addEventListener('click', filtrar3);
