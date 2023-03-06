@@ -95,7 +95,7 @@ h1 {
     
 }
 
-#eventos>div {
+#eventos>div{
     align-items: center;
     box-shadow: 0.5px 2px rgb(245, 170, 216);
     margin-left: 1%;
@@ -103,7 +103,7 @@ h1 {
     
 }
 
-#eventos>div>img {
+div>img {
     width:20vw;
     border-width: 1px;
     border-style: solid;
@@ -124,8 +124,8 @@ p {
     
 }
 
-#eventos>div>nav>a {
-    align-items: center;
+nav>a {
+    text-align: center;
     margin-left: 35%;
     color: rgb(240, 43, 191);
     
@@ -137,19 +137,20 @@ p {
     box-shadow: 0.5px 2px rgb(245, 170, 216);
 
 }
-
-#ev5>img {
-    width: 50%;
-    height: 50%;
+.card2{
+    align-items: center;
+    display:inline-block;
+}
+.card2>img {
+    width: 30vw;
+    height: 30vh;
     margin-right: 0%;
     margin-top: 5%;
     align-items: left;
+    
 }
 
-#descripcion {
-    align-items: right;
-    margin-left: 10%;
-}
+
 
 footer {
     display: flex;
@@ -270,4 +271,9 @@ form>input {
         align-items: end;
         margin-right: -20%;
     }
+    .card2>img{
+        width:80vw;
+        height: 40vh;
+    }
+    
 }  
