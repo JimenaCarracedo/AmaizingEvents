@@ -191,7 +191,7 @@ var data = {
     console.log("eventos futuros: "+upcomingevents);
           
             
-      console.log("eventos pasados: "+pastevents.join);
+      console.log("eventos pasados: "+pastevents);
       let eventos=document.getElementById("eventos");
       let imagenes=[document.getElementById("img1"), document.getElementById("img2"), document.getElementById("img3"), document.getElementById("img4")];
       let titulos=[document.getElementById("title1"), document.getElementById("title2"), document.getElementById("title3"), document.getElementById("title4")];
@@ -212,40 +212,39 @@ var data = {
         
       }
       console.log(titles);
-      for (i=0; i<4; i++){
+      /*for (i=0; i<4; i++){
         imagenes[i].setAttribute("src", img[i]);
         titulos[i].innerHTML=titles[i];
         desc[i].innerHTML=description[i];
         price[i].innerHTML=("Price: $"+prce[i]);
-      }
-      for(i=4; i<7; i++){
+      }*/
+      upcomingevents.forEach(evento=>{
+        i=evento._id-1;
         let div=document.createElement("div");
-      
-      let divisor=document.createElement("div");
-      divisor.className="card";
+        
+        let divisor=document.createElement("div");
+        divisor.className=("card");
         eventos.appendChild(divisor);
         imagenes[i]=document.createElement("img");
-        imagenes[i].setAttribute("src", img[i]);
+        imagenes[i].setAttribute("src", evento.image);
         divisor.appendChild(imagenes[i]);
         titulos[i]=document.createElement("h2");
-        titulos[i].innerHTML=titles[i];
+        titulos[i].innerHTML=evento.name;
         divisor.appendChild(titulos[i]);
         desc[i]=document.createElement("p");
-        desc[i].innerHTML=description[i];
+        desc[i].innerHTML=evento.description;
         divisor.appendChild(desc[i]);
         price[i]=document.createElement("p");
-        price[i].innerHTML=("Price: $"+prce[i]);
+        price[i].innerHTML=("Price: $"+evento.price);
         divisor.appendChild(price[i]);
         let nav=document.createElement("nav");
+        
+        nav.innerHTML= `<a href="./details.html?_id=${evento._id}">Ver Mas</a>`
         divisor.appendChild(nav);
-        let a=document.createElement("a");
-        a.innerHTML="Ver Mas";
-        a.setAttribute("href", "./details.html");
-        nav.appendChild(a);
-        eventos.appendChild(div);
-      }
+        });
+      
       let Events=[];
-      Events=upcomingevents;
+      Events=pastevents;
       function borrarCards(){
         Events.forEach(evento=>{
           document.querySelector(".card").remove();
