@@ -102,7 +102,27 @@ h1 {
     margin-right: 1%;
     
 }
+#evento {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    margin-left: 0%;
+    margin-right: 0%;
+    
+    
+}
 
+#evento>div{
+    align-items: center;
+    box-shadow: 0.5px 2px rgb(245, 170, 216);
+    margin-left: 1%;
+    margin-right: 1%;
+    
+}
 div>img {
     width:20vw;
     border-width: 1px;
@@ -222,6 +242,16 @@ form>input {
         display: inline-block;
     }
     #eventos>div>img{
+        align-items: center;
+        width:80vw;
+    }
+    #evento{
+        flex-direction: column;
+    }
+    #evento>div{
+        display: inline-block;
+    }
+    #evento>div>img{
         align-items: center;
         width:80vw;
     }
