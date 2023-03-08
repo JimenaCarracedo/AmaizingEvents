@@ -219,6 +219,44 @@ var data = {
         desc[i].innerHTML=description[i];
         price[i].innerHTML=("Price: $"+prce[i]);
       }*/
+      let categorias = [];
+                                  
+                                  let categoriasi = [];
+                                  for (clave of data.events){
+                                  categorias=clave.category;
+                                  
+                                  if(!categoriasi.includes(clave.category)){
+                                    categoriasi.push(clave.category);
+                                  }
+                                  
+                                }
+                                function imprimirCheckboxs(){
+                                for(i=0; i<7; i++){
+                                  
+                                  let categories =document.querySelector("#categories");
+                                  let label = document.createElement("label");
+                                  label.id=("categories"+i);
+                                  let input =document.createElement("input");
+                                  input.type = "checkbox";
+                                  input.id=("cat"+i);
+                                  label.innerHTML=categoriasi[i];
+                                  label.appendChild(input);
+                                  categories.appendChild(label);
+
+
+                                }
+                                  let central =document.querySelector("#central");
+                                  let search =document.createElement("input");
+                                  search.type="text";
+                                  search.id="search"
+                                  let lupa =document.createElement("img");
+                                  lupa.setAttribute("src", "./assets/lupa.png");
+                                  lupa.id="lupa";
+                                  search.appendChild(lupa);
+                                  categories.appendChild(search);
+                                  categories.appendChild(lupa);
+                              }
+                              imprimirCheckboxs();
       upcomingevents.forEach(evento=>{
         imprimirCards(evento);
         });
@@ -287,7 +325,7 @@ var data = {
       
       function filtrar1(){
         
-        let catI =document.getElementById("categories1").textContent;
+        let catI =document.getElementById("categories0").textContent;
 
             let categoria1=[];
             categoria1=Events.filter(evento=>evento.category.toUpperCase()==catI.toUpperCase());
@@ -301,7 +339,7 @@ var data = {
                   };
           function filtrar2(){
             
-            let catII =document.getElementById("categories2").textContent;
+            let catII =document.getElementById("categories1").textContent;
             
                 let categoria2=[];
                 categoria2=Events.filter(evento=>evento.category.toUpperCase()==catII.toUpperCase());
@@ -315,7 +353,7 @@ var data = {
               };      
               function filtrar3(){
                 
-                let catIII =document.getElementById("categories3").textContent;
+                let catIII =document.getElementById("categories2").textContent;
                 
                     let categoria3=[];
                     categoria3=Events.filter(evento=>evento.category.toUpperCase()==catIII.toUpperCase());
@@ -329,7 +367,7 @@ var data = {
                   };    
                   function filtrar4(){
                     
-                    let catIV =document.getElementById("categories4").textContent;
+                    let catIV =document.getElementById("categories3").textContent;
                     
                         let categoria4=[];
                         categoria4=Events.filter(evento=>evento.category.toUpperCase()==catIV.toUpperCase());
@@ -342,7 +380,7 @@ var data = {
                       };
                       function filtrar5(){
                         
-                        let catV =document.getElementById("categories5").textContent;
+                        let catV =document.getElementById("categories4").textContent;
                         
                             let categoria5=[];
                             categoria5=Events.filter(evento=>evento.category.toUpperCase()==catV.toUpperCase());
@@ -355,7 +393,7 @@ var data = {
                           };    
                           function filtrar6(){
                             
-                            let catVI =document.getElementById("categories6").textContent;
+                            let catVI =document.getElementById("categories5").textContent;
                             
                                 let categoria6=[];
                                 categoria6=Events.filter(evento=>evento.category.toUpperCase()==catVI.toUpperCase());
@@ -368,7 +406,7 @@ var data = {
                               };    
                               function filtrar7(){
                                 
-                                let catVII =document.getElementById("categories7").textContent;
+                                let catVII =document.getElementById("categories6").textContent;
                                 
                                     let categoria7=[];
                                     categoria7=Events.filter(evento=>evento.category.toUpperCase()==catVII.toUpperCase());
@@ -394,63 +432,77 @@ var data = {
                                   }
                                         borrarCards()
                                       };  
-                              
-                                      let cat1 =document.getElementById("cat1").addEventListener('change', (e)=>{
-                                        if (e.target.checked) {
-                                          filtrar1();
-                                        } else {
-                                          
-                                          document.querySelector(".FoodFair").remove();
-                                        }
-                                      })
-                                      let cat2 =document.getElementById("cat2").addEventListener('change', (e)=>{
-                                        if (e.target.checked) {
-                                          filtrar2();
-                                        } else {
-                                          
-                                          document.querySelector(".Museum").remove();
-                                        }
-                                      })
-                                      let cat3 =document.getElementById("cat3").addEventListener('change', (e)=>{
-                                        if (e.target.checked) {
-                                          filtrar3();
-                                        } else {
-                                          
-                                          document.querySelector(".CostumeParty").remove();
-                                        }
-                                      })
-                                      let cat4 =document.getElementById("cat4").addEventListener('change', (e)=>{
-                                        if (e.target.checked) {
-                                          filtrar4();
-                                        } else {
-                                          
-                                          document.querySelector(".MusicConcert").remove();
-                                        }
-                                      })
-                                      let cat5 =document.getElementById("cat5").addEventListener('change', (e)=>{
-                                        if (e.target.checked) {
-                                          filtrar5();
-                                        } else {
-                                          
-                                          document.querySelector(".Race").remove();
-                                        }
-                                      })
-                                      let cat6 =document.getElementById("cat6").addEventListener('change', (e)=>{
-                                        if (e.target.checked) {
-                                          filtrar6();
-                                        } else {
-                                        
-                                          document.querySelector(".BookExchange").remove();
-                                        }
-                                      })
-                                      let cat7 =document.getElementById("cat7").addEventListener('change', (e)=>{
-                                        if (e.target.checked) {
-                                          filtrar7();
-                                        } else {
-                                          
-                                          document.querySelector(".Cinema").remove();
-                                        }
-                                      })
-                                      let cat8 =document.getElementById("lupa").addEventListener('click', filtrar8); 
+                                  let cat1 =document.getElementById("cat0").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar1();
+                                    } else {
+                                      let comida = Array.prototype.slice.call(document.getElementsByClassName("FoodFair"), 0);
+                                      for (comidas of comida){
+                                        comidas.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat2 =document.getElementById("cat1").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar2();
+                                    } else {
+                                      let museo = Array.prototype.slice.call(document.getElementsByClassName("Museum"), 0);
+                                      for (museos of museo){
+                                        museos.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat3 =document.getElementById("cat2").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar3();
+                                    } else {
+                                      let fiesta = Array.prototype.slice.call(document.getElementsByClassName("CostumeParty"), 0);
+                                      for (fiestas of fiesta){
+                                        fiestas.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat4 =document.getElementById("cat3").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar4();
+                                    } else {
+                                      let recital = Array.prototype.slice.call(document.getElementsByClassName("MusicConcert"), 0);
+                                      for (recitales of recital){
+                                        recitales.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat5 =document.getElementById("cat4").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar5();
+                                    } else {
+                                      let carrera = Array.prototype.slice.call(document.getElementsByClassName("Race"), 0);
+                                      for (carreras of carrera){
+                                        carreras.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat6 =document.getElementById("cat5").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar6();
+                                    } else {
+                                      let libro = Array.prototype.slice.call(document.getElementsByClassName("BookExchange"), 0);
+                                      for (libros of libro){
+                                        libros.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat7 =document.getElementById("cat6").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar7();
+                                    } else {
+                                      let cine = Array.prototype.slice.call(document.getElementsByClassName("Cinema"), 0);
+                                      for (cines of cine){
+                                        cines.remove();
+                                      }
+                                      
+                                    }
+                                  })
+                                  let cat8 =document.getElementById("lupa").addEventListener('click', filtrar8);
  
       

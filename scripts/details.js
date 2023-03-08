@@ -178,7 +178,18 @@ const params =new URLSearchParams(queryString);
 const id = params.get("_id");
 let Eventos=[];
 Eventos=data.events;
-
+let categorias = [];
+                                  
+                                  let categoriasi = [];
+                                  for (clave of data.events){
+                                  categorias=clave.category;
+                                  
+                                  if(!categoriasi.includes(clave.category)){
+                                    categoriasi.push(clave.category);
+                                  }
+                                  
+                                }
+                               
 Eventos.forEach(evento => {
   console.log(evento._id);
   console.log(id);
@@ -201,5 +212,3 @@ Eventos.forEach(evento => {
     console.log("error");
   }
 });
-
-
