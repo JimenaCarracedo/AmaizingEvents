@@ -314,9 +314,9 @@ for (clave of data.events){
       function borrarCards(){
         
         
-        let card = document.getElementsByClassName("card");
+        let card = Array.prototype.slice.call(document.getElementsByClassName("card"), 0);;
         for (cards of card){
-        cards.style.visibility="hidden"
+        cards.remove();
         }    
       };
       
@@ -422,9 +422,11 @@ for (clave of data.events){
                                         categoria8=Events.filter(evento=>evento.name.toUpperCase().includes(catVIII.value.toUpperCase())||evento.description.toUpperCase().includes(catVIII.value.toUpperCase()||evento.category.toUpperCase().includes(catVIII.value.toUpperCase())));
                                         console.log(categoria8);
                                         let div=document.createElement("div");
-                                  categoria8.forEach(evento=>{
+                                  if(catVIII.value!=""){
+                                        categoria8.forEach(evento=>{
                                   imprimirCard(evento);
                                         });
+                                  }
                                         borrarCards()
                                       };  
                                   let cat1 =document.getElementById("cat1").addEventListener('change', (e)=>{
