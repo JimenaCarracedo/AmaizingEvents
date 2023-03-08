@@ -254,10 +254,12 @@ for (clave of data.events){
       }
       function imprimirCard(evento){
         i=evento._id-1;
+        let categoria= evento.categoria
+        let Categoria=evento.category.split(" ").join("");
         
       let event=document.getElementById("evento");
       let divisor=document.createElement("div");
-      divisor.className=("card-selected");
+      divisor.className=(Categoria);
       event.appendChild(divisor);
       imagenes[i]=document.createElement("img");
       imagenes[i].setAttribute("src", evento.image);
@@ -275,6 +277,7 @@ for (clave of data.events){
       
       nav.innerHTML= `<a href="./details.html?_id=${evento._id}">Ver Mas</a>`
       divisor.appendChild(nav);
+      
       }
 /*function imprimirCards (){
   console.log(data.events);
@@ -324,17 +327,19 @@ for (clave of data.events){
       function filtrar1(){
         
         let catI =document.getElementById("categories1").textContent;
-
+        
             let categoria1=[];
             categoria1=Events.filter(evento=>evento.category.toUpperCase()==catI.toUpperCase());
             console.log(categoria1);
             let div=document.createElement("div");
+            div.className=("card1");
             categoria1.forEach(evento=>{
               imprimirCard(evento);
               
                     });
                     borrarCards();            
-                  };
+                  
+                };
           function filtrar2(){
             
             let catII =document.getElementById("categories2").textContent;
@@ -343,6 +348,7 @@ for (clave of data.events){
                 categoria2=Events.filter(evento=>evento.category.toUpperCase()==catII.toUpperCase());
                 console.log(categoria2);
                 let div=document.createElement("div");
+                div.className=("card2");
           categoria2.forEach(evento=>{
           imprimirCard(evento)
 
@@ -356,11 +362,19 @@ for (clave of data.events){
                     let categoria3=[];
                     categoria3=Events.filter(evento=>evento.category.toUpperCase()==catIII.toUpperCase());
                     console.log(categoria3);
-                    let div=document.createElement("div");
+                    let card=document.createElement("div");
+                    
               categoria3.forEach(evento=>{
-              imprimirCard(evento);
-                    });
-                  
+                
+              
+              
+                imprimirCard(evento);
+                   
+                 
+              
+            });
+            
+            
                 borrarCards()
                   };    
                   function filtrar4(){
@@ -371,6 +385,7 @@ for (clave of data.events){
                         categoria4=Events.filter(evento=>evento.category.toUpperCase()==catIV.toUpperCase());
                         console.log(categoria4);
                         let div=document.createElement("div");
+                        div.className=("card4");
                   categoria4.forEach(evento=>{
                   imprimirCard(evento)      
                 });
@@ -384,6 +399,7 @@ for (clave of data.events){
                             categoria5=Events.filter(evento=>evento.category.toUpperCase()==catV.toUpperCase());
                             console.log(categoria5);
                             let div=document.createElement("div");
+                            div.className=("card5");
                       categoria5.forEach(evento=>{
                       imprimirCard(evento);
                           });
@@ -397,6 +413,7 @@ for (clave of data.events){
                                 categoria6=Events.filter(evento=>evento.category.toUpperCase()==catVI.toUpperCase());
                                 console.log(categoria6);
                                 let div=document.createElement("div");
+                                div.className=("card6");
                           categoria6.forEach(evento=>{
                           imprimirCard(evento)
                               });
@@ -410,16 +427,81 @@ for (clave of data.events){
                                     categoria7=Events.filter(evento=>evento.category.toUpperCase()==catVII.toUpperCase());
                                     console.log(categoria7);
                                     let div=document.createElement("div");
+                                    div.className=("card7");
                               categoria7.forEach(evento=>{
                               imprimirCard(evento);
                                     });
                                     borrarCards()
-                                  };  
+                                  };
+                                  function filtrar8(){
+                                
+                                    let catVIII =document.getElementById("search");
+                                    console.log(catVIII);
+                                        let categoria8=[];
+                                        categoria8=Events.filter(evento=>evento.name.toUpperCase().includes(catVIII.value.toUpperCase())||evento.description.toUpperCase().includes(catVIII.value.toUpperCase()||evento.category.toUpperCase().includes(catVIII.value.toUpperCase())));
+                                        console.log(categoria8);
+                                        let div=document.createElement("div");
+                                  categoria8.forEach(evento=>{
+                                  imprimirCard(evento);
+                                        });
+                                        borrarCards()
+                                      };  
                               
-      let cat1 =document.getElementById("cat1").addEventListener('click', filtrar1);
-      let cat2 =document.getElementById("cat2").addEventListener('click', filtrar2);
-      let cat3 =document.getElementById("cat3").addEventListener('click', filtrar3);
-      let cat4 =document.getElementById("cat4").addEventListener('click', filtrar4);
-      let cat5 =document.getElementById("cat5").addEventListener('click', filtrar5);
-      let cat6 =document.getElementById("cat6").addEventListener('click', filtrar6);
-      let cat7 =document.getElementById("cat7").addEventListener('click', filtrar7); 
+      let cat1 =document.getElementById("cat1").addEventListener('change', (e)=>{
+        if (e.target.checked) {
+          filtrar1();
+        } else {
+          
+          document.querySelector(".FoodFair").remove();
+        }
+      })
+      let cat2 =document.getElementById("cat2").addEventListener('change', (e)=>{
+        if (e.target.checked) {
+          filtrar2();
+        } else {
+          
+          document.querySelector(".Museum").remove();
+        }
+      })
+      let cat3 =document.getElementById("cat3").addEventListener('change', (e)=>{
+        if (e.target.checked) {
+          filtrar3();
+        } else {
+          
+          document.querySelector(".CostumeParty").remove();
+        }
+      })
+      let cat4 =document.getElementById("cat4").addEventListener('change', (e)=>{
+        if (e.target.checked) {
+          filtrar4();
+        } else {
+          
+          document.querySelector(".MusicConcert").remove();
+        }
+      })
+      let cat5 =document.getElementById("cat5").addEventListener('change', (e)=>{
+        if (e.target.checked) {
+          filtrar5();
+        } else {
+          
+          document.querySelector(".Race").remove();
+        }
+      })
+      let cat6 =document.getElementById("cat6").addEventListener('change', (e)=>{
+        if (e.target.checked) {
+          filtrar6();
+        } else {
+        
+          document.querySelector(".BookExchange").remove();
+        }
+      })
+      let cat7 =document.getElementById("cat7").addEventListener('change', (e)=>{
+        if (e.target.checked) {
+          filtrar7();
+        } else {
+          
+          document.querySelector(".Cinema").remove();
+        }
+      })
+      let cat8 =document.getElementById("lupa").addEventListener('click', filtrar8); 
+      

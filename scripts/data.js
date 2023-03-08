@@ -286,10 +286,12 @@ for (clave of data.events){
       Events=data.events
       function imprimirCard(evento){
         i=evento._id-1;
+        let categoria= evento.categoria
+        let Categoria=evento.category.split(" ").join("");
         
       let event=document.getElementById("evento");
       let divisor=document.createElement("div");
-      divisor.className=("card-selected");
+      divisor.className=(Categoria);
       event.appendChild(divisor);
       imagenes[i]=document.createElement("img");
       imagenes[i].setAttribute("src", evento.image);
@@ -307,6 +309,7 @@ for (clave of data.events){
       
       nav.innerHTML= `<a href="./details.html?_id=${evento._id}">Ver Mas</a>`
       divisor.appendChild(nav);
+      
       }
       function borrarCards(){
         
@@ -411,11 +414,88 @@ for (clave of data.events){
                                     });
                                     borrarCards()
                                   };  
-                              
-      let cat1 =document.getElementById("cat1").addEventListener('click', filtrar1);
-      let cat2 =document.getElementById("cat2").addEventListener('click', filtrar2);
-      let cat3 =document.getElementById("cat3").addEventListener('click', filtrar3);
-      let cat4 =document.getElementById("cat4").addEventListener('click', filtrar4);
-      let cat5 =document.getElementById("cat5").addEventListener('click', filtrar5);
-      let cat6 =document.getElementById("cat6").addEventListener('click', filtrar6);
-      let cat7 =document.getElementById("cat7").addEventListener('click', filtrar7); 
+                                  function filtrar8(){
+                                
+                                    let catVIII =document.getElementById("search");
+                                    console.log(catVIII);
+                                        let categoria8=[];
+                                        categoria8=Events.filter(evento=>evento.name.toUpperCase().includes(catVIII.value.toUpperCase())||evento.description.toUpperCase().includes(catVIII.value.toUpperCase()||evento.category.toUpperCase().includes(catVIII.value.toUpperCase())));
+                                        console.log(categoria8);
+                                        let div=document.createElement("div");
+                                  categoria8.forEach(evento=>{
+                                  imprimirCard(evento);
+                                        });
+                                        borrarCards()
+                                      };  
+                                  let cat1 =document.getElementById("cat1").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar1();
+                                    } else {
+                                      let comida = Array.prototype.slice.call(document.getElementsByClassName("FoodFair"), 0);
+                                      for (comidas of comida){
+                                        comidas.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat2 =document.getElementById("cat2").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar2();
+                                    } else {
+                                      let museo = Array.prototype.slice.call(document.getElementsByClassName("Museum"), 0);
+                                      for (museos of museo){
+                                        museos.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat3 =document.getElementById("cat3").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar3();
+                                    } else {
+                                      let fiesta = Array.prototype.slice.call(document.getElementsByClassName("CostumeParty"), 0);
+                                      for (fiestas of fiesta){
+                                        fiestas.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat4 =document.getElementById("cat4").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar4();
+                                    } else {
+                                      let recital = Array.prototype.slice.call(document.getElementsByClassName("MusicConcert"), 0);
+                                      for (recitales of recital){
+                                        recitales.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat5 =document.getElementById("cat5").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar5();
+                                    } else {
+                                      let carrera = Array.prototype.slice.call(document.getElementsByClassName("Race"), 0);
+                                      for (carreras of carrera){
+                                        carreras.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat6 =document.getElementById("cat6").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar6();
+                                    } else {
+                                      let libro = Array.prototype.slice.call(document.getElementsByClassName("BookExchange"), 0);
+                                      for (libros of libro){
+                                        libros.remove();
+                                      }
+                                    }
+                                  })
+                                  let cat7 =document.getElementById("cat7").addEventListener('change', (e)=>{
+                                    if (e.target.checked) {
+                                      filtrar7();
+                                    } else {
+                                      let cine = Array.prototype.slice.call(document.getElementsByClassName("Cinema"), 0);
+                                      for (cines of cine){
+                                        cines.remove();
+                                      }
+                                      
+                                    }
+                                  })
+                                  let cat8 =document.getElementById("lupa").addEventListener('click', filtrar8); 
