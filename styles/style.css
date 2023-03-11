@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/fondo.png");
+    background-image: url("fondo.png");
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgb(247, 214, 71);
