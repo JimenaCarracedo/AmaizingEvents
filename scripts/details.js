@@ -37,7 +37,7 @@ Eventos.forEach(evento => {
   <h2 class="evento-title">${evento.name}</h2>
   <p class="description">${evento.description}</p>
   <p class="price">${evento.price}</p>
-  <a href="./home.html">Go back</a>
+  <a href="./index.html">Go back</a>
   </div
   </div>
   </div>`
