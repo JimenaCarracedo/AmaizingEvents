@@ -307,6 +307,8 @@ for (clave of data.events){
                                   }
                                         borrarCards()
                                       };  
+                                      
+                                      
                                   let cat1 =document.getElementById("cat0").addEventListener('change', (e)=>{
                                     if (e.target.checked) {
                                       filtrar1();
