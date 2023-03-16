@@ -307,6 +307,8 @@ for (clave of data.events){
                                   }
                                         borrarCards()
                                       };  
+                                      
+                                      
                                   let cat1 =document.getElementById("cat0").addEventListener('change', (e)=>{
                                     if (e.target.checked) {
                                       filtrar1();
@@ -315,6 +317,7 @@ for (clave of data.events){
                                       for (comidas of comida){
                                         comidas.remove();
                                       }
+                                      
                                     }
                                   })
                                   let cat2 =document.getElementById("cat1").addEventListener('change', (e)=>{
