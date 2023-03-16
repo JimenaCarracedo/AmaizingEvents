@@ -109,7 +109,7 @@ console.log(cpasadas);
   let Td1=document.createElement("td")
   Td1.innerHTML=gananciastotales
   let Td2=document.createElement("td")
-  Td2.innerHTML=asistencia+"%"
+  Td2.innerHTML=porcentaje+"%"
   T1.appendChild(Tr1)
   T2.appendChild(Td1)   
   T3.appendChild(Td2)
@@ -129,7 +129,7 @@ console.log(cpasadas);
   let Td4=document.createElement("td")
   Td4.innerHTML=gananciastotales
   let Td5=document.createElement("td")
-  Td5.innerHTML=asistencia+"%"
+  Td5.innerHTML=porcentaje+"%"
   Tr1.appendChild(Tr3)
   Td1.appendChild(Td4)   
   Td2.appendChild(Td5)
@@ -146,7 +146,7 @@ console.log(cpasadas);
   let Td6=document.createElement("td")
   Td6.innerHTML=gananciastotales
   let Td7=document.createElement("td")
-  Td7.innerHTML=asistencia+"%"
+  Td7.innerHTML=porcentaje+"%"
   Tr3.appendChild(Tr4)
   Td4.appendChild(Td6)   
   Td5.appendChild(Td7)
@@ -163,7 +163,7 @@ console.log(cpasadas);
   let Td8=document.createElement("td")
   Td8.innerHTML=gananciastotales
   let Td9=document.createElement("td")
-  Td9.innerHTML=asistencia+"%"
+  Td9.innerHTML=porcentaje+"%"
   Tr4.appendChild(Tr5)
   Td6.appendChild(Td8)   
   Td7.appendChild(Td9)
@@ -180,7 +180,7 @@ console.log(cpasadas);
   let Td10=document.createElement("td")
   Td10.innerHTML=gananciastotales
   let Td11=document.createElement("td")
-  Td11.innerHTML=asistencia+"%"
+  Td11.innerHTML=porcentaje+"%"
   Tr5.appendChild(Tr6)
   Td8.appendChild(Td10)   
   Td9.appendChild(Td11)
@@ -197,7 +197,7 @@ console.log(cpasadas);
   let Td12=document.createElement("td")
   Td12.innerHTML=gananciastotales
   let Td13=document.createElement("td")
-  Td13.innerHTML=asistencia+"%"
+  Td13.innerHTML=porcentaje+"%"
   Tr6.appendChild(Tr7)
   Td10.appendChild(Td12)   
   Td11.appendChild(Td13)
@@ -214,7 +214,7 @@ console.log(cpasadas);
   let Td14=document.createElement("td")
   Td14.innerHTML=gananciastotales
   let Td15=document.createElement("td")
-  Td15.innerHTML=asistencia+"%"
+  Td15.innerHTML=porcentaje+"%"
   Tr7.appendChild(Tr8)
   Td12.appendChild(Td14)   
   Td13.appendChild(Td15)
@@ -239,7 +239,7 @@ console.log(cpasadas);
   let td1=document.createElement("td")
   td1.innerHTML=gananciastotales
   let td2=document.createElement("td")
-  td2.innerHTML=asistencia+"%"
+  td2.innerHTML=porcentaje+"%"
   t1.appendChild(tr1)
   t2.appendChild(td1)   
   t3.appendChild(td2)
@@ -259,7 +259,7 @@ console.log(cpasadas);
   let td4=document.createElement("td")
   td4.innerHTML=gananciastotales
   let td5=document.createElement("td")
-  td5.innerHTML=asistencia+"%"
+  td5.innerHTML=porcentaje+"%"
   tr1.appendChild(tr3)
   td1.appendChild(td4)   
   td2.appendChild(td5)
@@ -276,7 +276,7 @@ console.log(cpasadas);
   let td6=document.createElement("td")
   td6.innerHTML=gananciastotales
   let td7=document.createElement("td")
-  td7.innerHTML=asistencia+"%"
+  td7.innerHTML=porcentaje+"%"
   tr3.appendChild(tr4)
   td4.appendChild(td6)   
   td5.appendChild(td7) 
@@ -294,7 +294,7 @@ console.log(cpasadas);
   let td8=document.createElement("td")
   td8.innerHTML=gananciastotales
   let td9=document.createElement("td")
-  td9.innerHTML=asistencia+"%"
+  td9.innerHTML=porcentaje+"%"
   tr4.appendChild(tr5)
   td6.appendChild(td8)   
   td7.appendChild(td9) 
@@ -312,7 +312,7 @@ console.log(cpasadas);
   let td10=document.createElement("td")
   td10.innerHTML=gananciastotales
   let td11=document.createElement("td")
-  td11.innerHTML=asistencia+"%"
+  td11.innerHTML=porcentaje+"%"
   tr5.appendChild(tr6)
   td8.appendChild(td10)   
   td9.appendChild(td11) 
@@ -330,7 +330,7 @@ console.log(cpasadas);
   let td12=document.createElement("td")
   td12.innerHTML=gananciastotales
   let td13=document.createElement("td")
-  td13.innerHTML=asistencia+"%"
+  td13.innerHTML=porcentaje+"%"
   tr6.appendChild(tr7)
   td10.appendChild(td12)   
   td11.appendChild(td13) 
@@ -348,7 +348,7 @@ console.log(cpasadas);
   let td14=document.createElement("td")
   td14.innerHTML=gananciastotales
   let td15=document.createElement("td")
-  td15.innerHTML=asistencia+"%"
+  td15.innerHTML=porcentaje+"%"
   tr7.appendChild(tr8)
   td12.appendChild(td14)   
   td13.appendChild(td15) 
