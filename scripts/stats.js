@@ -14,6 +14,8 @@ async function traerDatos(){
   let categoriaspasadas=[]
   let eventospasados=[]
   let eventosfuturos=[]
+  let eventopasadomax=[]
+  let eventopasadomin=[]
   for(clave of data.events){ 
     capacidadmaxima.push(clave.capacity)
     
@@ -28,19 +30,34 @@ async function traerDatos(){
 }
   for(i=0; i<asistencia.length; i++){
     porcentajeasistencia.push(asistencia[i]*100/capacidad[i])
-    }
     
+  }
+     
     let capmax=Math.max(...capacidadmaxima);  
     let porcentajemaximoasistencia=Math.max(...porcentajeasistencia)
     let porcentajeminimoasistencia=Math.min(...porcentajeasistencia);
-     console.log("el porcentaje maximo de asistencia es de "+porcentajemaximoasistencia);
+    for(i=0; i<eventospasados.length; i++){
+      if(porcentajeasistencia[i]==porcentajemaximoasistencia){
+        eventopasadomax=(eventospasados[i].name);
+        console.log(i);
+      }
+       if(porcentajeasistencia[i]==porcentajeminimoasistencia){
+        eventopasadomin=(eventospasados[i].name);
+        console.log(i);
+      }
+      if(eventospasados[i].capacity==capmax){
+        eventomasgrande=eventospasados[i].name
+      }
+    }
+    
+      console.log("el porcentaje maximo de asistencia es de "+porcentajemaximoasistencia);
      console.log("la capacidad maxima es de "+capmax);  
      console.log("la asistencia menor es de "+porcentajeminimoasistencia);
      const div =document.querySelector("#maxasist")
-  
-     div.innerHTML = `<td class="pmaxas">${porcentajemaximoasistencia}%</td>
-     <td class="pminas">${porcentajeminimoasistencia}%</td>
-     <td class="capmax">${capmax}</td>
+
+     div.innerHTML = `<td class="pmaxas">${eventopasadomax}</td>
+     <td class="pminas">${eventopasadomin}</td>
+     <td class="capmax">${eventomasgrande}</td>
      `
   cpasadas= new Set(categoriaspasadas)
 console.log(cpasadas);
