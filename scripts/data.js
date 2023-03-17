@@ -105,6 +105,9 @@ for (clave of data.events){
     function imprimirCards(evento){
       
         i=evento._id-1;
+        
+
+        
       let div=document.createElement("div");
       
       let divisor=document.createElement("div");
@@ -125,7 +128,7 @@ for (clave of data.events){
       let nav=document.createElement("nav");
       divisor.appendChild(nav);
       nav.innerHTML= `<a href="./details.html?_id=${evento._id}">Ver Mas</a>`
-      
+        
     };
     
     
@@ -187,7 +190,7 @@ for (clave of data.events){
       
       nav.innerHTML= `<a href="./details.html?_id=${evento._id}">Ver Mas</a>`
       divisor.appendChild(nav);
-      
+        
       }
       function borrarCards(){
         
@@ -206,11 +209,13 @@ for (clave of data.events){
             categoria1=Events.filter(evento=>evento.category.toUpperCase()==catI.toUpperCase());
             console.log(categoria1);
             let div=document.createElement("div");
+            
             categoria1.forEach(evento=>{
               imprimirCard(evento);
               
                     });
-                    borrarCards();            
+                    borrarCards();
+                             
                   };
           function filtrar2(){
             
@@ -382,7 +387,7 @@ for (clave of data.events){
                                     }
                                   })
                                   let cat8 =document.getElementById("lupa").addEventListener('click', filtrar8);
-                             
+                                  
                                 }catch(e){
                                   console.log("error")
                                 }
