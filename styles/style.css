@@ -25,7 +25,7 @@ header>ul {
     align-items: flex-end;
 }
 
-header>ul>li {
+header>div>a {
     display: inline-block;
     align-items: flex-end;
     border-width: 1px;
@@ -34,11 +34,9 @@ header>ul>li {
     background-color: hsl(315, 94%, 53%);
     opacity: 0.8;
     border-radius: 10%;
-    
+    color: black;    
 }
-header>ul>li>a{
-    color: black;
-}
+
 
 main>nav>div {
     display: flex;
