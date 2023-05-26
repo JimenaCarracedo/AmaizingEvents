@@ -200,7 +200,7 @@ for (clave of data.events){
         cards.remove();
         }    
       };
-      
+                
       function filtrar1(){
         
         let catI =document.getElementById("categories0").textContent;
@@ -296,7 +296,8 @@ for (clave of data.events){
                               imprimirCard(evento);
                                     });
                                     borrarCards()
-                                  };  
+                                  };
+                                    
                                   function filtrar8(){
                                 
                                     let catVIII =document.getElementById("search");
@@ -312,7 +313,6 @@ for (clave of data.events){
                                   }
                                         borrarCards()
                                       };  
-                                      
                                       
                                   let cat1 =document.getElementById("cat0").addEventListener('change', (e)=>{
                                     if (e.target.checked) {
